@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Optus test</string>
+    <string name="failed_get_location">Failed to get your location</string>
+    <string name="blue">Blue</string>
+    <string name="yellow">Yellow</string>
+    <string name="red">Red</string>
+    <string name="mode_of_transport">Mode of Transport:</string>
+</resources>

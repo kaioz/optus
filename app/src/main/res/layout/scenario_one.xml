@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:divider="?android:listDivider">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMinWidth="100dp"
+            app:tabMode="scrollable"/>
+
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/viewpager"/>
+
+        <android.support.v7.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/grid"
+            app:columnCount="3"
+            app:rowCount="3"
+            app:alignmentMode="alignBounds"
+            >
+
+            <TextView android:text="TextView1"
+                app:layout_column="0"
+                app:layout_row="0"
+                style="@style/grid_item"/>
+            <TextView android:text="TextView2"
+                style="@style/grid_item"
+                app:layout_column="1"
+                app:layout_row="1"/>
+            <TextView android:text="TextView3"
+                app:layout_column="2"
+                app:layout_row="2"
+                style="@style/grid_item"/>
+
+        </android.support.v7.widget.GridLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/text_field"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/holo_gap_double"
+            android:paddingBottom="@dimen/holo_gap_double"
+            android:id="@+id/buttons_section">
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                app:backgroundTint="@color/infoBlueColor"
+                android:text="@string/blue"
+                android:id="@+id/blue_button"
+                />
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                app:backgroundTint="@color/yellowGreenColor"
+                android:text="@string/yellow"
+                android:id="@+id/yellow_button"
+                />
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button.Colored"
+                app:backgroundTint="@color/brickRedColor"
+                android:text="@string/red"
+                android:id="@+id/red_button"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>
