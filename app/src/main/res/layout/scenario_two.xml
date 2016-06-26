@@ -1,21 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
 
-
-    <Spinner
-        android:id="@+id/name"
+    <com.cocosw.accessory.views.complex.BetterViewAnimator
+        android:id="@+id/trending_animator"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/holo_gap"/>
+        android:layout_height="match_parent"
+        android:inAnimation="@android:anim/fade_in"
+        android:outAnimation="@android:anim/fade_out">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/TextAppearance.AppCompat.Menu"
-        android:text="@string/mode_of_transport"/>
+        <LinearLayout
+            android:id="@+id/trending_swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
+                    <android.support.v7.widget.AppCompatSpinner
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/holo_gap_double" />
+
+                    <TextView
+                        android:id="@+id/transport_header"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/holo_gap"
+                        android:text="@string/mode_of_transport" />
+
+                    <TextView
+                        android:id="@+id/transport"
+                        style="@style/Base.TextAppearance.AppCompat.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/holo_gap" />
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/navigate"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/transport_header"
+                android:layout_weight="0"
+                android:text="@string/navigate"
+                android:textAllCaps="true" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/trending_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="48dp">
+
+            <ImageView
+                android:id="@+id/trending_error_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="32dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/alerts_and_states_error" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/trending_error_image"
+                android:gravity="center_horizontal"
+                android:text="@string/error_title"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/trending_error_image"
+                android:gravity="center_horizontal"
+                android:text="@string/error_message" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/trending_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="48dp">
+
+            <ImageView
+                android:id="@+id/trending_empty_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="32dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/snow" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/trending_empty_image"
+                android:gravity="center_horizontal"
+                android:text="@string/empty_title"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="34sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/trending_empty_image"
+                android:gravity="center_horizontal"
+                android:text="@string/empty_message" />
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </com.cocosw.accessory.views.complex.BetterViewAnimator>
 </LinearLayout>

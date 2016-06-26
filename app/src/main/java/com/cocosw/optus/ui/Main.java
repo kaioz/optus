@@ -56,6 +56,11 @@ public class Main extends SinglePaneActivity<Main.SelectorFragment> {
             out.add(new Pair<String, Class>("Scenario 2",ScenarioTwo.class));
             return out;
         }
+
+        @Override
+        protected boolean reloadNeeded(Bundle savedInstanceState) {
+            return true;
+        }
     }
 }
 

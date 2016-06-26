@@ -4,7 +4,6 @@ import com.cocosw.framework.debug.DebugActivityLifeCycle;
 import com.cocosw.framework.debug.DebugFragmentLiftCycle;
 import com.cocosw.framework.debug.DebugUtils;
 import com.cocosw.framework.debug.ViewServerActiviyCycle;
-import com.cocosw.optus.service.MockServiceProvider;
 import com.readystatesoftware.notificationlog.Log;
 
 import timber.log.Timber;
@@ -28,7 +27,7 @@ class Config implements Runnable {
 
         app.registerActivityLifecycle(new DebugActivityLifeCycle());
         app.registerFragmentLifecycle(new DebugFragmentLiftCycle());
-        DebugUtils.setupStrictMode();
+//        DebugUtils.setupStrictMode();
         Timber.plant(new Timber.DebugTree());
         Log.initialize(app, app.getApplicationInfo().icon);
     }

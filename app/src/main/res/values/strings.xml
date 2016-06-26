@@ -5,4 +5,11 @@
     <string name="yellow">Yellow</string>
     <string name="red">Red</string>
     <string name="mode_of_transport">Mode of Transport:</string>
+    <string name="error_title">Oops</string>
+    <string name="error_message">Something wrong</string>
+    <string name="empty_title">Empty</string>
+    <string name="empty_message">Nothing here</string>
+    <string name="navigate">Navigate</string>
+    <string name="scenariotwo">Scenario 2</string>
+    <string name="map">Map</string>
 </resources>
