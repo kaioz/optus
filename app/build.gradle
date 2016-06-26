@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'android-apt'
 
 
 // Manifest version information!
@@ -63,7 +62,7 @@ android {
         release {
             versionNameSuffix '-release'
             zipAlignEnabled true
-            minifyEnabled true
+            minifyEnabled false
             debuggable false
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -104,7 +103,7 @@ configurations.all {
 
 dependencies {
     //noinspection GradleDependency
-    debugCompile 'com.cocosw:framework:2.5.3@aar'
+    compile 'com.cocosw:framework:2.5.3@aar'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:support-v4:23.3.0'
@@ -118,19 +117,15 @@ dependencies {
     compile 'com.cocosw:query:0.2.2'
     compile 'com.cocosw:lifecycle:0.1.2'
     compile 'com.jakewharton.timber:timber:4.0.1'
-    compile 'com.jakewharton.byteunits:byteunits:0.9.1'
 
     compile 'io.reactivex:rxjava:1.1.0'
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'com.squareup.dagger:dagger:1.2.2'
-    apt 'com.squareup.dagger:dagger-compiler:1.2.2'
     compile 'com.github.kevinsawicki:http-request:6.0'
 
     compile 'com.squareup.okhttp:okhttp:2.5.0'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.4.0'
     compile 'com.google.code.gson:gson:2.4'
-    compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
-    compile 'com.f2prateek.rx.preferences:rx-preferences:1.0.0'
     compile 'com.google.android.gms:play-services-maps:9.0.2'
 
     debugCompile 'com.cocosw.framework:debug:0.6.5@aar'
