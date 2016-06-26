@@ -175,6 +175,7 @@ public class ScenarioTwo extends Base<Void> implements AdapterView.OnItemSelecte
                     .subscribe(new Subscriber<Route[]>() {
                         @Override
                         public void onCompleted() {
+                            requestRender();
                         }
 
                         @Override
@@ -186,9 +187,8 @@ public class ScenarioTwo extends Base<Void> implements AdapterView.OnItemSelecte
 
                         @Override
                         public void onNext(Route[] listResult) {
-                            displayId = R.id.trending_swipe_refresh;
                             repositories = Arrays.asList(listResult);
-                            requestRender();
+                            displayId = repositories.isEmpty()?R.id.trending_empty:R.id.trending_swipe_refresh;
                         }
                     }));
         }
